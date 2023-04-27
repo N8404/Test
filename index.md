@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -68,6 +67,8 @@
         <label for="green">Green</label><br>
         <input type="radio" name="color" id="blue" value="blue">
         <label for="blue">Blue</label><br>
+        <input type="radio" name="color" id="white" value="white">
+        <label for="white">White</label><br>
         <button onclick="changeColor()">Change Color</button>
       </div>
     </div>
