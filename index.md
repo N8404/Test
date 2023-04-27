@@ -2,14 +2,38 @@
 <html>
   <head>
     <title>Chat Room</title>
+    <style>
+      /* Center the chat window */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      /* Add a thick blue border to the chat window */
+      #chat-window {
+        border: 5px solid blue;
+        padding: 20px;
+        width: 500px;
+      }
+      
+      /* Add a blue border to the message input area */
+      #message-input {
+        border: 2px solid blue;
+        padding: 10px;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
-    <h1>Chat Room</h1>
-    
     <div id="chat-window">
+      <h1>Chat Room</h1>
+      
       <div id="chat-messages">
         <!-- Chat messages will be displayed here -->
       </div>
+      
       <form id="chat-form">
         <input type="text" id="message-input" placeholder="Type your message...">
         <button type="submit">Send</button>
