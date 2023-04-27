@@ -16,7 +16,7 @@
         border: 5px solid blue;
         padding: 20px;
         width: 500px;
-        height: 500px;
+        max-height: calc(100vh - 150px);
         overflow-y: scroll;
       }
       
@@ -114,5 +114,4 @@
       <input type="text" id="message-input" placeholder="Type your message...">
       <button type="submit">Send</button>
     </form>
-    
-    <
+
