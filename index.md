@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Chat Room</title>
@@ -15,6 +16,8 @@
         border: 5px solid blue;
         padding: 20px;
         width: 500px;
+        height: 500px;
+        overflow-y: scroll;
       }
       
       /* Add a blue border to the message input area */
@@ -32,12 +35,12 @@
       <div id="chat-messages">
         <!-- Chat messages will be displayed here -->
       </div>
-      
-      <form id="chat-form">
-        <input type="text" id="message-input" placeholder="Type your message...">
-        <button type="submit">Send</button>
-      </form>
     </div>
+    
+    <form id="chat-form">
+      <input type="text" id="message-input" placeholder="Type your message...">
+      <button type="submit">Send</button>
+    </form>
     
     <script>
       const chatWindow = document.getElementById("chat-window");
@@ -50,6 +53,9 @@
         const messageElement = document.createElement("div");
         messageElement.innerText = message;
         chatMessages.appendChild(messageElement);
+        
+        // Scroll to the bottom of the chat window
+        chatWindow.scrollTop = chatWindow.scrollHeight;
       }
       
       // Function to handle the chat form submission
