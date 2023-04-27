@@ -26,10 +26,83 @@
         padding: 10px;
         width: 100%;
       }
+      
+      /* Add a gray background to the login form popup */
+      #login-popup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+        visibility: hidden;
+      }
+      
+      /* Add a white background and padding to the login form */
+      #login-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 200px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      
+      /* Add styles to the login form elements */
+      #login-form label, #login-form input, #login-form button {
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+      
+      #login-form label {
+        font-weight: bold;
+      }
+      
+      #login-form input[type="text"], #login-form input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid gray;
+        border-radius: 5px;
+      }
+      
+      #login-form button {
+        background-color: blue;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      /* Add a border around the username display */
+      #username-display {
+        border: 2px solid blue;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
     </style>
   </head>
   <body>
+    <div id="login-popup">
+      <form id="login-form">
+        <label for="username-input">Username:</label>
+        <input type="text" id="username-input" required>
+        <label for="password-input">Password:</label>
+        <input type="password" id="password-input" required>
+        <button type="submit">Log in</button>
+      </form>
+    </div>
+    
     <div id="chat-window">
+      <div id="username-display"></div>
       <h1>Chat Room</h1>
       
       <div id="chat-messages">
@@ -42,32 +115,4 @@
       <button type="submit">Send</button>
     </form>
     
-    <script>
-      const chatWindow = document.getElementById("chat-window");
-      const chatMessages = document.getElementById("chat-messages");
-      const chatForm = document.getElementById("chat-form");
-      const messageInput = document.getElementById("message-input");
-      
-      // Function to add a new chat message to the chat window
-      function addMessage(message) {
-        const messageElement = document.createElement("div");
-        messageElement.innerText = message;
-        chatMessages.appendChild(messageElement);
-        
-        // Scroll to the bottom of the chat window
-        chatWindow.scrollTop = chatWindow.scrollHeight;
-      }
-      
-      // Function to handle the chat form submission
-      function handleSubmit(event) {
-        event.preventDefault();
-        const message = messageInput.value;
-        messageInput.value = "";
-        addMessage(message);
-      }
-      
-      // Attach the event listener for form submission
-      chatForm.addEventListener("submit", handleSubmit);
-    </script>
-  </body>
-</html>
+    <
